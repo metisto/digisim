@@ -3,11 +3,7 @@ package metisto.digisim;
 public final class Components {
 
     public static Connection fixed(final boolean value) {
-        return new Connection() {
-            public boolean value() {
-                return value;
-            }
-        };
+        return () -> value;
     }
 
     public static Wire connection(final Connection connection) {
