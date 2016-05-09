@@ -16,8 +16,4 @@ public class And {
     public Connection output() {
         return output;
     }
-
-    public boolean value() {
-        return output().value();
-    }
 }

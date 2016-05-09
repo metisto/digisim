@@ -10,7 +10,7 @@ public class WireUnitTest {
 
     @Test
     public void should_return_same_value_as_input() {
-        assertEquals(true, connection(fixed(true)).value());
-        assertEquals(false, connection(fixed(false)).value());
+        assertEquals(true, connection(fixed(true)).output().value());
+        assertEquals(false, connection(fixed(false)).output().value());
     }
 }

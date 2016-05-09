@@ -12,8 +12,4 @@ public class Wire {
     public Connection output() {
         return output;
     }
-
-    public boolean value() {
-        return output().value();
-    }
 }

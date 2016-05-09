@@ -10,13 +10,13 @@ public class OrUnitTest {
 
     @Test
     public void should_return_true_when_at_least_one_input_is_true() {
-        assertEquals(true, or(fixed(false), fixed(true)).value());
-        assertEquals(true, or(fixed(true), fixed(false)).value());
-        assertEquals(true, or(fixed(true), fixed(true)).value());
+        assertEquals(true, or(fixed(false), fixed(true)).output().value());
+        assertEquals(true, or(fixed(true), fixed(false)).output().value());
+        assertEquals(true, or(fixed(true), fixed(true)).output().value());
     }
 
     @Test
     public void should_return_false_when_all_input_are_false() {
-        assertEquals(false, or(fixed(false), fixed(false)).value());
+        assertEquals(false, or(fixed(false), fixed(false)).output().value());
     }
 }

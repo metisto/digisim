@@ -16,8 +16,4 @@ public class Xor {
     public Connection output() {
         return output;
     }
-
-    public boolean value() {
-        return output().value();
-    }
 }

@@ -16,7 +16,15 @@ public class AndUnitTest {
         checkAnd(false, false, false);
     }
 
-    private void checkAnd(boolean a, boolean b, boolean expected) {
-        assertEquals(expected, and(fixed(a), fixed(b)).value());
+    private void checkAnd(final boolean a, final boolean b, final boolean expected) {
+        assertEquals(expected, and(fixed(a), fixed(b)).output().value());
+    }
+
+    @Test
+    public void should_be_dynamic() {
+        final And and = and(fixed(true), fixed(true));
+        assertEquals(true, and.output().value());
+        and.b(fixed(false));
+        assertEquals(false, and.output().value());
     }
 }
