@@ -2,24 +2,24 @@ package metisto.digisim;
 
 public final class Components {
 
-    public static Output fixed(final boolean value) {
-        return new Output() {
+    public static Connection fixed(final boolean value) {
+        return new Connection() {
             public boolean value() {
                 return value;
             }
         };
     }
 
-    public static Connection connection(Output output) {
-        Connection connection = new Connection();
-        connection.input().connectTo(output);
-        return connection;
+    public static Wire connection(Connection connection) {
+        Wire wire = new Wire();
+        wire.connection(connection);
+        return wire;
     }
 
-    static And and(Output a, Output b) {
+    static And and(Connection a, Connection b) {
         final And and = new And();
-        and.a().connectTo(a);
-        and.b().connectTo(b);
+        and.a(a);
+        and.b(b);
         return and;
     }
 }

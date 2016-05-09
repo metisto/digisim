@@ -1,30 +1,26 @@
 package metisto.digisim;
 
 public class And {
-    private Output a;
-    private Output b;
+    private Connection a;
+    private Connection b;
 
-    public Input a() {
-        return new Input() {
-            public void connectTo(Output output) {
-                a = output;
-            }
-        };
+    public void a(Connection connection) {
+        a = connection;
     }
 
-    public Input b() {
-        return new Input() {
-            public void connectTo(Output output) {
-                b = output;
-            }
-        };
+    public void b(Connection connection) {
+        b = connection;
     }
 
-    public Output output() {
-        return new Output() {
+    public Connection connection() {
+        return new Connection() {
             public boolean value() {
                 return a.value() && b.value();
             }
         };
+    }
+
+    public boolean value() {
+        return connection().value();
     }
 }

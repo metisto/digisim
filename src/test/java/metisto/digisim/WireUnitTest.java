@@ -6,11 +6,11 @@ import static metisto.digisim.Components.connection;
 import static metisto.digisim.Components.fixed;
 import static org.junit.Assert.assertEquals;
 
-public class ConnectionUnitTest {
+public class WireUnitTest {
 
     @Test
     public void should_return_same_value_as_input() {
-        assertEquals(true, connection(fixed(true)).output().value());
-        assertEquals(false, connection(fixed(false)).output().value());
+        assertEquals(true, connection(fixed(true)).value());
+        assertEquals(false, connection(fixed(false)).value());
     }
 }
