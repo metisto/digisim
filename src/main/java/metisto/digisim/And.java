@@ -4,11 +4,11 @@ public class And {
     private Connection a;
     private Connection b;
 
-    public void a(Connection connection) {
+    public void a(final Connection connection) {
         a = connection;
     }
 
-    public void b(Connection connection) {
+    public void b(final Connection connection) {
         b = connection;
     }
 
