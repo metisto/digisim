@@ -36,4 +36,11 @@ public final class Components {
         xor.b(b);
         return xor;
     }
+
+    static HalfAdder halfAdder(Connection a, Connection b) {
+        final HalfAdder halfAdder = new HalfAdder();
+        halfAdder.a(a);
+        halfAdder.b(b);
+        return halfAdder;
+    }
 }
