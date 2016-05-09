@@ -15,4 +15,11 @@ public final class Components {
         connection.input().connectTo(output);
         return connection;
     }
+
+    static And and(Output a, Output b) {
+        final And and = new And();
+        and.a().connectTo(a);
+        and.b().connectTo(b);
+        return and;
+    }
 }
