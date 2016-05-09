@@ -9,15 +9,14 @@ import static org.junit.Assert.assertEquals;
 public class AndUnitTest {
 
     @Test
-    public void should_return_true_when_all_input_are_true() {
-        assertEquals(true, and(fixed(true), fixed(true)).value());
+    public void should_respect_and_truth_table() {
+        checkAnd(true, true, true);
+        checkAnd(true, false, false);
+        checkAnd(false, true, false);
+        checkAnd(false, false, false);
     }
 
-    @Test
-    public void should_return_false_when_at_least_one_input_is_false() {
-        assertEquals(false, and(fixed(false), fixed(true)).value());
-        assertEquals(false, and(fixed(true), fixed(false)).value());
-        assertEquals(false, and(fixed(false), fixed(false)).value());
+    private void checkAnd(boolean a, boolean b, boolean expected) {
+        assertEquals(expected, and(fixed(a), fixed(b)).value());
     }
-
 }
