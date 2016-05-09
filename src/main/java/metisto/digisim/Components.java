@@ -22,4 +22,11 @@ public final class Components {
         and.b(b);
         return and;
     }
+
+    static Or or(Connection a, Connection b) {
+        final Or or = new Or();
+        or.a(a);
+        or.b(b);
+        return or;
+    }
 }
