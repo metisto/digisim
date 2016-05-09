@@ -1,8 +1,10 @@
 package metisto.digisim;
 
+import static metisto.digisim.Components.fixed;
+
 public class And {
-    private Connection a;
-    private Connection b;
+    private Connection a = fixed(false);
+    private Connection b = fixed(false);
     private final Connection output = () -> a.value() & b.value();
 
     public void a(final Connection connection) {
