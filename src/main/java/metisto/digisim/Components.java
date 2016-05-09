@@ -29,4 +29,11 @@ public final class Components {
         or.b(b);
         return or;
     }
+
+    static Xor xor(Connection a, Connection b) {
+        final Xor xor = new Xor();
+        xor.a(a);
+        xor.b(b);
+        return xor;
+    }
 }

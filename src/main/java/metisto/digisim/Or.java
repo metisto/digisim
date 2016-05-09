@@ -15,7 +15,7 @@ public class Or {
     public Connection connection() {
         return new Connection() {
             public boolean value() {
-                return a.value() || b.value();
+                return a.value() | b.value();
             }
         };
     }

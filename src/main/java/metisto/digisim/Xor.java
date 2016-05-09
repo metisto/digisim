@@ -1,6 +1,6 @@
 package metisto.digisim;
 
-public class And {
+public class Xor {
     private Connection a;
     private Connection b;
 
@@ -15,7 +15,7 @@ public class And {
     public Connection connection() {
         return new Connection() {
             public boolean value() {
-                return a.value() & b.value();
+                return a.value() ^ b.value();
             }
         };
     }
