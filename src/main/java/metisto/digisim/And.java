@@ -3,6 +3,7 @@ package metisto.digisim;
 public class And {
     private Connection a;
     private Connection b;
+    private final Connection output = () -> a.value() & b.value();
 
     public void a(final Connection connection) {
         a = connection;
@@ -13,11 +14,7 @@ public class And {
     }
 
     public Connection output() {
-        return new Connection() {
-            public boolean value() {
-                return a.value() & b.value();
-            }
-        };
+        return output;
     }
 
     public boolean value() {

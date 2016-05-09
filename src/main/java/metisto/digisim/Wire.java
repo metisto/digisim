@@ -3,14 +3,14 @@ package metisto.digisim;
 import static metisto.digisim.Components.fixed;
 
 public class Wire {
-    private Connection connection = fixed(false);
+    private Connection output = fixed(false);
 
     public void connection(final Connection connection) {
-        this.connection = connection;
+        output = connection;
     }
 
     public Connection output() {
-        return connection;
+        return output;
     }
 
     public boolean value() {
