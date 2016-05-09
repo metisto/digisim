@@ -9,11 +9,11 @@ public class Wire {
         this.connection = connection;
     }
 
-    public Connection connection() {
+    public Connection output() {
         return connection;
     }
 
     public boolean value() {
-        return connection().value();
+        return output().value();
     }
 }

@@ -12,7 +12,7 @@ public class Or {
         b = connection;
     }
 
-    public Connection connection() {
+    public Connection output() {
         return new Connection() {
             public boolean value() {
                 return a.value() | b.value();
@@ -21,6 +21,6 @@ public class Or {
     }
 
     public boolean value() {
-        return connection().value();
+        return output().value();
     }
 }

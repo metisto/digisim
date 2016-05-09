@@ -15,10 +15,10 @@ public class HalfAdder {
     }
 
     public Connection sum() {
-        return xor.connection();
+        return xor.output();
     }
 
     public Connection carry() {
-        return and.connection();
+        return and.output();
     }
 }
