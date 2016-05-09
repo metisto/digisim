@@ -9,4 +9,10 @@ public final class Components {
             }
         };
     }
+
+    public static Connection connection(Output output) {
+        Connection connection = new Connection();
+        connection.input().connectTo(output);
+        return connection;
+    }
 }
