@@ -1,17 +1,17 @@
 package metisto.digisim;
 
 public class HalfAdder {
-    private final And and = new And();
-    private final Xor xor = new Xor();
+    private final Wire a = new Wire();
+    private final Wire b = new Wire();
+    private final And and = Components.and(a.output(), b.output());
+    private final Xor xor = Components.xor(a.output(), b.output());
 
     public void a(final Connection connection) {
-        and.a(connection);
-        xor.a(connection);
+        a.input(connection);
     }
 
     public void b(final Connection connection) {
-        and.b(connection);
-        xor.b(connection);
+        b.input(connection);
     }
 
     public Connection sum() {

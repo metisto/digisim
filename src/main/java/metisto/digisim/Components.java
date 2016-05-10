@@ -8,7 +8,7 @@ public final class Components {
 
     public static Wire connection(final Connection connection) {
         final Wire wire = new Wire();
-        wire.connection(connection);
+        wire.input(connection);
         return wire;
     }
 

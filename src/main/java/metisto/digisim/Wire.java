@@ -3,10 +3,11 @@ package metisto.digisim;
 import static metisto.digisim.Components.fixed;
 
 public class Wire {
-    private Connection output = fixed(false);
+    private Connection input = fixed(false);
+    private final Connection output = () -> input.value();
 
-    public void connection(final Connection connection) {
-        output = connection;
+    public void input(final Connection connection) {
+        input = connection;
     }
 
     public Connection output() {
