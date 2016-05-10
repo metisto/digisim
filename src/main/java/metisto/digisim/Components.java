@@ -39,4 +39,12 @@ public final class Components {
         halfAdder.b(b);
         return halfAdder;
     }
+
+    static FullAdder fullAdder(final Connection a, final Connection b, final Connection r) {
+        final FullAdder fullAdder = new FullAdder();
+        fullAdder.a(a);
+        fullAdder.b(b);
+        fullAdder.r(r);
+        return fullAdder;
+    }
 }
