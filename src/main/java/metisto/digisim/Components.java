@@ -6,9 +6,9 @@ public final class Components {
         return () -> value;
     }
 
-    public static Wire connection(final Connection connection) {
+    public static Wire connection(final Connection input) {
         final Wire wire = new Wire();
-        wire.input(connection);
+        wire.input(input);
         return wire;
     }
 

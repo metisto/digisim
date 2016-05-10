@@ -23,19 +23,9 @@ public class AndUnitTest {
     @Test
     public void should_be_dynamic() {
         final And and = and(fixed(true), fixed(true));
-        assertEquals(true, and.output().value());
+        final Connection output = and.output();
+        assertEquals(true, output.value());
         and.b(fixed(false));
-        assertEquals(false, and.output().value());
-    }
-
-    @Test
-    public void should_work_with_wire() {
-        final Wire a = new Wire();
-        final Wire b = new Wire();
-        final And and = Components.and(a.output(), b.output());
-
-        a.input(fixed(true));
-        b.input(fixed(true));
-        assertEquals(true, and.output().value());
+        assertEquals(false, output.value());
     }
 }

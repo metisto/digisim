@@ -13,4 +13,13 @@ public class WireUnitTest {
         assertEquals(true, connection(fixed(true)).output().value());
         assertEquals(false, connection(fixed(false)).output().value());
     }
+
+    @Test
+    public void should_be_dynamic() {
+        final Wire wire = connection(fixed(true));
+        final Connection output = wire.output();
+        assertEquals(true, output.value());
+        wire.input(fixed(false));
+        assertEquals(false, output.value());
+    }
 }
