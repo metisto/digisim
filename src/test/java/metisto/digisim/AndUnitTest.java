@@ -17,15 +17,14 @@ public class AndUnitTest {
     }
 
     private void checkAnd(final boolean a, final boolean b, final boolean expected) {
-        assertEquals(expected, and(fixed(a), fixed(b)).output().value());
+        assertEquals(expected, and(fixed(a), fixed(b)).value());
     }
 
     @Test
     public void should_be_dynamic() {
         final And and = and(fixed(true), fixed(true));
-        final Connection output = and.output();
-        assertEquals(true, output.value());
+        assertEquals(true, and.value());
         and.b(fixed(false));
-        assertEquals(false, output.value());
+        assertEquals(false, and.value());
     }
 }

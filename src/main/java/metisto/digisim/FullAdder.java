@@ -7,8 +7,8 @@ public class FullAdder {
     private final Wire a = new Wire();
     private final Wire b = new Wire();
     private final Wire r = new Wire();
-    private final HalfAdder first = halfAdder(a.output(), b.output());
-    private final HalfAdder second = halfAdder(first.sum(), r.output());
+    private final HalfAdder first = halfAdder(a, b);
+    private final HalfAdder second = halfAdder(first.sum(), r);
     private final Or or = or(first.carry(), second.carry());
 
     public void a(final Connection connection) {
@@ -28,6 +28,6 @@ public class FullAdder {
     }
 
     public Connection carry() {
-        return or.output();
+        return or;
     }
 }

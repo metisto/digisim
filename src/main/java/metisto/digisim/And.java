@@ -2,10 +2,9 @@ package metisto.digisim;
 
 import static metisto.digisim.Components.fixed;
 
-public class And {
+public class And implements Connection {
     private Connection a = fixed(false);
     private Connection b = fixed(false);
-    private final Connection output = () -> a.value() & b.value();
 
     public void a(final Connection connection) {
         a = connection;
@@ -15,7 +14,7 @@ public class And {
         b = connection;
     }
 
-    public Connection output() {
-        return output;
+    public boolean value() {
+        return a.value() & b.value();
     }
 }

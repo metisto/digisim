@@ -10,13 +10,13 @@ public class XorUnitTest {
 
     @Test
     public void should_return_true_when_inputs_are_different() {
-        assertEquals(true, xor(fixed(false), fixed(true)).output().value());
-        assertEquals(true, xor(fixed(true), fixed(false)).output().value());
+        assertEquals(true, xor(fixed(false), fixed(true)).value());
+        assertEquals(true, xor(fixed(true), fixed(false)).value());
     }
 
     @Test
     public void should_return_false_when_inputs_are_same() {
-        assertEquals(false, xor(fixed(true), fixed(true)).output().value());
-        assertEquals(false, xor(fixed(false), fixed(false)).output().value());
+        assertEquals(false, xor(fixed(true), fixed(true)).value());
+        assertEquals(false, xor(fixed(false), fixed(false)).value());
     }
 }

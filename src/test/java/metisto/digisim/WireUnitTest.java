@@ -10,16 +10,15 @@ public class WireUnitTest {
 
     @Test
     public void should_return_same_value_as_input() {
-        assertEquals(true, connection(fixed(true)).output().value());
-        assertEquals(false, connection(fixed(false)).output().value());
+        assertEquals(true, connection(fixed(true)).value());
+        assertEquals(false, connection(fixed(false)).value());
     }
 
     @Test
     public void should_be_dynamic() {
         final Wire wire = connection(fixed(true));
-        final Connection output = wire.output();
-        assertEquals(true, output.value());
+        assertEquals(true, wire.value());
         wire.input(fixed(false));
-        assertEquals(false, output.value());
+        assertEquals(false, wire.value());
     }
 }
