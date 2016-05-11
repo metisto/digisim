@@ -8,12 +8,14 @@ public class HalfAdder {
     private final BinaryGate and = Components.and(a, b);
     private final BinaryGate xor = Components.xor(a, b);
 
-    public void a(final Connection connection) {
+    public HalfAdder a(final Connection connection) {
         a.input(connection);
+        return this;
     }
 
-    public void b(final Connection connection) {
+    public HalfAdder b(final Connection connection) {
         b.input(connection);
+        return this;
     }
 
     public Connection sum() {

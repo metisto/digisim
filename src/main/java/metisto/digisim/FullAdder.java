@@ -10,16 +10,19 @@ public class FullAdder {
     private final HalfAdder second = halfAdder(first.sum(), r);
     private final BinaryGate or = or(first.carry(), second.carry());
 
-    public void a(final Connection connection) {
+    public FullAdder a(final Connection connection) {
         a.input(connection);
+        return this;
     }
 
-    public void b(final Connection connection) {
+    public FullAdder b(final Connection connection) {
         b.input(connection);
+        return this;
     }
 
-    public void r(final Connection connection) {
+    public FullAdder r(final Connection connection) {
         r.input(connection);
+        return this;
     }
 
     public Connection sum() {

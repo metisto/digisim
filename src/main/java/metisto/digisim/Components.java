@@ -52,18 +52,19 @@ public final class Components {
         return xor().a(a).b(b);
     }
 
+    private static HalfAdder halfAdder() {
+        return new HalfAdder();
+    }
+
     public static HalfAdder halfAdder(final Connection a, final Connection b) {
-        final HalfAdder halfAdder = new HalfAdder();
-        halfAdder.a(a);
-        halfAdder.b(b);
-        return halfAdder;
+        return halfAdder().a(a).b(b);
+    }
+
+    private static FullAdder fullAdder() {
+        return new FullAdder();
     }
 
     public static FullAdder fullAdder(final Connection a, final Connection b, final Connection r) {
-        final FullAdder fullAdder = new FullAdder();
-        fullAdder.a(a);
-        fullAdder.b(b);
-        fullAdder.r(r);
-        return fullAdder;
+        return fullAdder().a(a).b(b).r(r);
     }
 }
