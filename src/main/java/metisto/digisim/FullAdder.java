@@ -9,7 +9,7 @@ public class FullAdder {
     private final Wire r = new Wire();
     private final HalfAdder first = halfAdder(a, b);
     private final HalfAdder second = halfAdder(first.sum(), r);
-    private final Or or = or(first.carry(), second.carry());
+    private final BinaryGate or = or(first.carry(), second.carry());
 
     public void a(final Connection connection) {
         a.input(connection);

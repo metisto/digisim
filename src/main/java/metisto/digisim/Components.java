@@ -2,6 +2,12 @@ package metisto.digisim;
 
 public final class Components {
 
+    public static Connection undefined() {
+        return () -> {
+            throw new RuntimeException("undefined");
+        };
+    }
+
     public static Connection fixed(final boolean value) {
         return () -> value;
     }
@@ -12,22 +18,22 @@ public final class Components {
         return wire;
     }
 
-    static And and(final Connection a, final Connection b) {
-        final And and = new And();
+    static BinaryGate and(final Connection a, final Connection b) {
+        final BinaryGate and = new BinaryGate(BinaryGate.Operators.AND);
         and.a(a);
         and.b(b);
         return and;
     }
 
-    static Or or(final Connection a, final Connection b) {
-        final Or or = new Or();
+    static BinaryGate or(final Connection a, final Connection b) {
+        final BinaryGate or = new BinaryGate(BinaryGate.Operators.OR);
         or.a(a);
         or.b(b);
         return or;
     }
 
-    static Xor xor(final Connection a, final Connection b) {
-        final Xor xor = new Xor();
+    static BinaryGate xor(final Connection a, final Connection b) {
+        final BinaryGate xor = new BinaryGate(BinaryGate.Operators.XOR);
         xor.a(a);
         xor.b(b);
         return xor;

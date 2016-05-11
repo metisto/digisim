@@ -22,7 +22,7 @@ public class AndUnitTest {
 
     @Test
     public void should_be_dynamic() {
-        final And and = and(fixed(true), fixed(true));
+        final BinaryGate and = and(fixed(true), fixed(true));
         assertEquals(true, and.value());
         and.b(fixed(false));
         assertEquals(false, and.value());
