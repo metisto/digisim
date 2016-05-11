@@ -22,6 +22,16 @@ public final class Components {
         return wire;
     }
 
+    public static Connection not(final Connection input) {
+        final UnaryGate not = not();
+        not.input(input);
+        return not;
+    }
+
+    public static UnaryGate not() {
+        return new UnaryGate((a -> !a));
+    }
+
     public static BinaryGate and() {
         return new BinaryGate((a, b) -> a & b);
     }
