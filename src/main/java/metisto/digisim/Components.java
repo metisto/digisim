@@ -22,22 +22,34 @@ public final class Components {
         return wire;
     }
 
+    public static BinaryGate and() {
+        return new BinaryGate((a, b) -> a & b);
+    }
+
     public static BinaryGate and(final Connection a, final Connection b) {
-        final BinaryGate and = new BinaryGate(BinaryGate.Operators.AND);
+        final BinaryGate and = and();
         and.a(a);
         and.b(b);
         return and;
     }
 
+    public static BinaryGate or() {
+        return new BinaryGate((a, b) -> a | b);
+    }
+
     public static BinaryGate or(final Connection a, final Connection b) {
-        final BinaryGate or = new BinaryGate(BinaryGate.Operators.OR);
+        final BinaryGate or = or();
         or.a(a);
         or.b(b);
         return or;
     }
 
+    public static BinaryGate xor() {
+        return new BinaryGate((a, b) -> a ^ b);
+    }
+
     public static BinaryGate xor(final Connection a, final Connection b) {
-        final BinaryGate xor = new BinaryGate(BinaryGate.Operators.XOR);
+        final BinaryGate xor = xor();
         xor.a(a);
         xor.b(b);
         return xor;

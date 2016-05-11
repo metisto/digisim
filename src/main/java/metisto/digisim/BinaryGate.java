@@ -7,21 +7,9 @@ import static metisto.digisim.Components.undefined;
 public class BinaryGate implements Connection {
     private Connection a = undefined();
     private Connection b = undefined();
-    private final Operators operator;
+    private final BiFunction<Boolean, Boolean, Boolean> operator;
 
-    public enum Operators {
-        AND((a, b) -> a & b),
-        OR((a, b) -> a | b),
-        XOR((a, b) -> a ^ b);
-
-        final BiFunction<Boolean, Boolean, Boolean> function;
-
-        Operators(final BiFunction<Boolean, Boolean, Boolean> function) {
-            this.function = function;
-        }
-    }
-
-    public BinaryGate(final Operators operator) {
+    public BinaryGate(final BiFunction<Boolean, Boolean, Boolean> operator) {
         this.operator = operator;
     }
 
@@ -34,6 +22,6 @@ public class BinaryGate implements Connection {
     }
 
     public boolean value() {
-        return operator.function.apply(a.value(), b.value());
+        return operator.apply(a.value(), b.value());
     }
 }
