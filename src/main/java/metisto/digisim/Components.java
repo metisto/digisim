@@ -17,9 +17,7 @@ public final class Components {
     }
 
     public static Wire wire(final Connection input) {
-        final Wire wire = wire();
-        wire.input(input);
-        return wire;
+        return wire().input(input);
     }
 
     public static Connection not(final Connection input) {
