@@ -12,8 +12,9 @@ public class UnaryGate implements Connection {
         this.operator = operator;
     }
 
-    public void input(final Connection connection) {
+    public UnaryGate input(final Connection connection) {
         input = connection;
+        return this;
     }
 
     public boolean value() {

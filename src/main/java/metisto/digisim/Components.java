@@ -21,9 +21,7 @@ public final class Components {
     }
 
     public static Connection not(final Connection input) {
-        final UnaryGate not = not();
-        not.input(input);
-        return not;
+        return not().input(input);
     }
 
     public static UnaryGate not() {
