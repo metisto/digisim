@@ -12,8 +12,12 @@ public final class Components {
         return () -> value;
     }
 
-    public static Wire connection(final Connection input) {
-        final Wire wire = new Wire();
+    public static Wire wire() {
+        return new Wire();
+    }
+
+    public static Wire wire(final Connection input) {
+        final Wire wire = wire();
         wire.input(input);
         return wire;
     }
