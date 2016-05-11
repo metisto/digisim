@@ -13,12 +13,14 @@ public class BinaryGate implements Connection {
         this.operator = operator;
     }
 
-    public void a(final Connection connection) {
+    public BinaryGate a(final Connection connection) {
         a = connection;
+        return this;
     }
 
-    public void b(final Connection connection) {
+    public BinaryGate b(final Connection connection) {
         b = connection;
+        return this;
     }
 
     public boolean value() {

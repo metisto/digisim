@@ -35,10 +35,7 @@ public final class Components {
     }
 
     public static BinaryGate and(final Connection a, final Connection b) {
-        final BinaryGate and = and();
-        and.a(a);
-        and.b(b);
-        return and;
+        return and().a(a).b(b);
     }
 
     public static BinaryGate or() {
@@ -46,10 +43,7 @@ public final class Components {
     }
 
     public static BinaryGate or(final Connection a, final Connection b) {
-        final BinaryGate or = or();
-        or.a(a);
-        or.b(b);
-        return or;
+        return or().a(a).b(b);
     }
 
     public static BinaryGate xor() {
@@ -57,10 +51,7 @@ public final class Components {
     }
 
     public static BinaryGate xor(final Connection a, final Connection b) {
-        final BinaryGate xor = xor();
-        xor.a(a);
-        xor.b(b);
-        return xor;
+        return xor().a(a).b(b);
     }
 
     public static HalfAdder halfAdder(final Connection a, final Connection b) {
