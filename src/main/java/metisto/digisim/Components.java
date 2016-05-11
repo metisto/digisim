@@ -52,7 +52,7 @@ public final class Components {
         return xor().a(a).b(b);
     }
 
-    private static HalfAdder halfAdder() {
+    public static HalfAdder halfAdder() {
         return new HalfAdder();
     }
 
@@ -60,7 +60,7 @@ public final class Components {
         return halfAdder().a(a).b(b);
     }
 
-    private static FullAdder fullAdder() {
+    public static FullAdder fullAdder() {
         return new FullAdder();
     }
 
