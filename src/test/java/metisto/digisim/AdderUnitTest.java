@@ -11,6 +11,7 @@ public class AdderUnitTest {
         final Adder adder = new Adder(1).a(0, fixed(false)).b(0, fixed(false));
         assertEquals(false, adder.sum(0).value());
         assertEquals(false, adder.carry().value());
+        assertEquals(0, adder.sum());
     }
 
     @Test
@@ -18,6 +19,7 @@ public class AdderUnitTest {
         final Adder adder = new Adder(1).a(0, fixed(true)).b(0, fixed(true));
         assertEquals(false, adder.sum(0).value());
         assertEquals(true, adder.carry().value());
+        assertEquals(0, adder.sum());
     }
 
     @Test
@@ -30,6 +32,7 @@ public class AdderUnitTest {
         assertEquals(false, adder.sum(1).value());
         assertEquals(false, adder.sum(2).value());
         assertEquals(false, adder.carry().value());
+        assertEquals(0, adder.sum());
     }
 
     @Test
@@ -42,6 +45,7 @@ public class AdderUnitTest {
         assertEquals(true, adder.sum(1).value());
         assertEquals(false, adder.sum(2).value());
         assertEquals(false, adder.carry().value());
+        assertEquals(2, adder.sum());
     }
 
     @Test
@@ -54,5 +58,6 @@ public class AdderUnitTest {
         assertEquals(false, adder.sum(1).value());
         assertEquals(false, adder.sum(2).value());
         assertEquals(true, adder.carry().value());
+        assertEquals(0, adder.sum());
     }
 }

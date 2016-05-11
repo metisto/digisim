@@ -44,6 +44,18 @@ public class Adder {
         return adders.get(index).sum();
     }
 
+    public int sum() {
+        final StringBuilder builder = new StringBuilder();
+        for (final FullAdder adder : adders) {
+            if (adder.sum().value()) {
+                builder.append("1");
+            } else {
+                builder.append("0");
+            }
+        }
+        return Integer.valueOf(builder.toString(), 2);
+    }
+
     public Connection carry() {
         return getLast(adders).carry();
     }
